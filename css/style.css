@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 
 }
 
@@ -12,7 +13,7 @@
     align-items: center;
     justify-content: center;
 
-    background: #222f3e;
+    background: rgb(34, 47, 62);
 
 }
 
@@ -22,16 +23,34 @@
     align-items: center;
     justify-content: space-between;
 
-    width: 600px;
-    height: 120px;
+    width: 1200px;
+
+    padding: 1rem 0;
 }
 
 .divisoriaTitulo .todasTagsH1 .tagH1 {
 
+    background: rgb(0, 31, 61);
     color: #c8d6e5;
 
     font-family: 'Lobster';
-    font-size: 3rem;
+    font-size: 3.5rem;
+
+    text-shadow: 2px 2px 5px black;
+
+    border-top: 0.5px solid #2e86de;
+    border-left: 1px solid #2e86de;
+    border-right: 1px solid #2e86de;
+    border-bottom: 5px solid #2e86de;
+
+    border-radius: 10px;
+
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+
+    cursor: pointer;
+
+    transition: box-shadow 0.5s;
 
 }
 
@@ -41,109 +60,178 @@
 
 }
 
-.divisoriaTitulo .todasTagsH1 .imgH1 {
+.divisoriaTitulo .todasTagsH1 .tagH1:hover {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0px 2px 5px black;
 
-    background: rgba(34, 47, 62, 0.950);
-    color: #2e86de;
+}
 
-    font-family: 'Lobster';
-    font-size: 5rem;
+.divisoriaTitulo .todasTagsH1 img {
 
     width: 100px;
-    height: 100px;
-
-    border: 1px solid #2e86de;
-    border-radius: 24px;
-
-    box-shadow: 0px 0px 5px #2e86de;
-
-    cursor: pointer;
-
-    transition: 0.3s background;
 
 }
 
-.divisoriaTitulo .todasTagsH1 .imgH1:hover {
+nav {
 
-    background: #2e86de;
-    color: rgba(34, 47, 62, 0.950);
-
-    box-shadow: 0px 0px 10px #2e86de;
-
-}
-
-.menu {
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    
-    background: rgba(34, 47, 62, 0.950);
+    background: rgba(34, 47, 62, 0.980);
 
     list-style: none;
 
-}
-
-.menu a {
-
-    text-decoration: none;
+    text-align: center;
 
 }
 
-.menu a li {
+nav .menu {
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+
+    width: 100vw;
+
+    transition: left 0.5s;
+
+}
+
+nav .menu a li {
 
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
+    background: rgba(34, 47, 62, 0.980);
     color: #2e86de;
-    
-    font-family: 'Open Sans';
+
+    font-family: 'Open Sans Condensed';
+    font-weight: 700;
     font-size: 1.5rem;
 
-    width: 100%;
-    height: 55px;
+    height: 50px;
 
-    transition: color 0.5s;
+    transition: background 0.2s;
 
 }
 
-.menu a li:hover {
+nav .menu a li:hover {
 
     background: #2e86de;
-    color: #222f3e;
+    color: rgba(34, 47, 62, 0.980);
 
 }
 
-.menu a li i {
+nav .menu a li i {
 
     width: 35px;
 
 }
 
-@media(min-width: 1200px){
+.checkbtn {
+
+    color: #2e86de;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    display: none;
+
+}
+
+#check {
+
+    display: none;
+
+}
+
+section {
+
+    background: #2e86de;
+
+    color: white;
+
+}
+
+@media(max-width: 1250px) {
 
     .divisoriaTitulo .todasTagsH1 {
-
+        
         width: 800px;
 
     }
 
-    .menu {
+}
 
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(1, 1fr);
+@media(max-width: 1080px) {
+
+    .divisoriaTitulo .todasTagsH1 {
+        
+        width: 700px;
 
     }
 
-    .menu a li {
+    nav .menu {
 
-        height: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        
+        transition: left 0.5s;
+    
+    }
 
+}
+
+@media(max-width: 720px) {
+
+    .divisoriaTitulo .todasTagsH1 {
+        
+        width: 500px;
+
+    }
+
+    nav {
+
+        position: relative;
+
+    }
+
+    nav .menu {
+
+
+        left: -100%;
+
+        position: absolute;
+
+    }
+
+    .checkbtn {
+
+        display: block;
+
+    }
+
+    #check:checked~ul {
+
+        left: 0;
+
+    }
+
+}
+
+@media(max-width: 550px) {
+
+    .divisoriaTitulo .todasTagsH1 {
+
+        flex-direction: column;
+    
+        padding: 1rem 0;
+    }
+
+    nav .menu {
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    
     }
 
 }
